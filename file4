@@ -1,0 +1,27 @@
+class Movie:
+    def __init__(self, title, available_seats):
+        self.title = title
+        self.available_seats = available_seats
+
+    def book_ticket(self, num_tickets):
+        if num_tickets <= self.available_seats:
+            self.available_seats -= num_tickets
+            print(f"{num_tickets} ticket(s) booked for {self.title}")
+        else:
+            print(f"Sorry, only {self.available_seats} seat(s) available for {self.title}")
+
+# Create Movie instances
+movie1 = Movie("Avengers: Endgame", 100)
+movie2 = Movie("The Lion King", 80)
+movie3 = Movie("Joker", 120)
+
+# Book movie tickets
+num_tickets = int(input("Enter the number of tickets you want to book: "))
+movie1.book_ticket(num_tickets)
+
+num_tickets = int(input("Enter the number of tickets you want to book: "))
+movie2.book_ticket(num_tickets)
+
+num_tickets = int(input("Enter the number of tickets you want to book: "))
+movie3.book_ticket(num_tickets)
+
