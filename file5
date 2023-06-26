@@ -1,0 +1,32 @@
+class Doctor:
+    def __init__(self, name):
+        self.name = name
+        self.available_slots = []
+
+    def add_available_slot(self, slot):
+        self.available_slots.append(slot)
+
+    def book_appointment(self, slot):
+        if slot in self.available_slots:
+            self.available_slots.remove(slot)
+            print(f"Appointment booked with Dr. {self.name} at {slot}")
+        else:
+            print(f"Slot {slot} is not available for Dr. {self.name}")
+
+# Create Doctor instances
+doctor1 = Doctor("John Doe")
+doctor2 = Doctor("Jane Smith")
+
+# Add available slots for doctors
+doctor1.add_available_slot("2023-06-26 10:00 AM")
+doctor1.add_available_slot("2023-06-26 11:00 AM")
+doctor2.add_available_slot("2023-06-26 10:00 AM")
+doctor2.add_available_slot("2023-06-26 12:00 PM")
+
+# Book appointments
+appointment_slot = input("Enter the appointment slot you want to book (YYYY-MM-DD HH:MM AM/PM): ")
+doctor1.book_appointment(appointment_slot)
+
+appointment_slot = input("Enter the appointment slot you want to book (YYYY-MM-DD HH:MM AM/PM): ")
+doctor2.book_appointment(appointment_slot)
+
