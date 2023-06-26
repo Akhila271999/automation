@@ -1,1 +1,20 @@
-fghjkl;'dsfghkjl;'dfhgjkl;'
+def register_user():
+    print("Registration Form")
+    print("-----------------")
+    
+    # Get user input
+    name = input("Name: ")
+    email = input("Email: ")
+    username = input("Username: ")
+    password = input("Password: ")
+    
+    # Validate input (you can add more validation logic as per your requirements)
+    if name and email and username and password:
+        # Save user data to a database or perform other desired operations
+        print("Registration successful!")
+    else:
+        print("Error: Please fill in all the required fields.")
+
+# Call the register_user() function to start the registration process
+register_user()
+
