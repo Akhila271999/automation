@@ -1,1 +1,73 @@
-aadddddddddddddddddddddddddddddddddddddddddddjjjjkjkghfghjgfdsFghj
+import java.util.ArrayList;
+import java.util.List;
+
+class Station {
+    private String name;
+
+    public Station(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Train {
+    private int trainNumber;
+    private List<Station> route;
+    private int currentStationIndex;
+
+    public Train(int trainNumber, List<Station> route) {
+        this.trainNumber = trainNumber;
+        this.route = route;
+        this.currentStationIndex = 0;
+    }
+
+    public void moveNextStation() {
+        currentStationIndex++;
+        if (currentStationIndex < route.size()) {
+            Station nextStation = route.get(currentStationIndex);
+            System.out.println("Train " + trainNumber + " is moving to station: " + nextStation.getName());
+        } else {
+            System.out.println("Train " + trainNumber + " has reached the final destination.");
+        }
+    }
+}
+
+public class MetroSystem {
+    public static void main(String[] args) {
+        Station stationA = new Station("Station A");
+        Station stationB = new Station("Station B");
+        Station stationC = new Station("Station C");
+        Station stationD = new Station("Station D");
+
+        List<Station> route1 = new ArrayList<>();
+        route1.add(stationA);
+        route1.add(stationB);
+        route1.add(stationC);
+        route1.add(stationD);
+
+        List<Station> route2 = new ArrayList<>();
+        route2.add(stationD);
+        route2.add(stationC);
+        route2.add(stationB);
+        route2.add(stationA);
+
+        Train train1 = new Train(1, route1);
+        Train train2 = new Train(2, route2);
+
+        // Simulate the movement of trains
+        train1.moveNextStation();
+        train2.moveNextStation();
+        train1.moveNextStation();
+        train2.moveNextStation();
+        train1.moveNextStation();
+        train2.moveNextStation();
+        train1.moveNextStation();
+        train2.moveNextStation();
+        train1.moveNextStation();
+        train2.moveNextStation();
+    }
+}
+
