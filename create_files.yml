@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  name: Create files
+
+  tasks:
+    - name: File1
+      file:
+        path: ~ /aws_scripts
+        state: touch  
+
+
