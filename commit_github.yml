@@ -6,18 +6,18 @@
     - name: Clone GitHub Repository
       git:
         repo: git@github.com:Akhila271999/automation.git
-        dest: ~ /aws_scripts/repository
+        dest: ~ /home/ec2-user/automation/aws_scripts
         clone: yes
 
     - name: Copy Files to Local Repository
       copy:
-        src: ~ /aws_scripts
-        dest: ~ /home/ec2-user/automation/automation.git
+        src: ~ /home/ec2-user/automation
+        dest: ~ /home/ec2-user/automation/Akhila271999/automation.git
 
     - name: Commit Files
       shell: |
-        cd /aws_scripts/repository
+        cd /home/ec2-user/automation/Akhila271999/automation.git
         git add .
         git commit -m "Adding files"
-        git push origin master
+        git push origin main
 
