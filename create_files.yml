@@ -6,6 +6,21 @@
     - name: File1
       file:
         path: ~ /aws_scripts
+        state: touch
+    - name: File2
+      file:
+        path: ~ /aws_scripts
+        state: touch
+    - name: file3
+      file:
+        path: ~ /aws_scripts
+        state: touch
+    - name: file4
+      file:
+        path: ~ /aws_scripts
+        state: touch
+    - name: file5
+      file:
+        path: ~ /aws_scripts
         state: touch  
-
-
+ 
